@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+        form {
+            margin: 50px auto;
+            width: 300px;
+            background-color: #b3ffcc;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: green;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    submit {
+  background-color: green;
+  color: black;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+    </style>
+
+
+<h1>Create Your Account</h1>
+
+<form action="/signup/" method="post">
+     {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" id="username" name="username" placeholder="Enter Your Name" required><br>
+    <label for="">First Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Enter Your First Name"><br>
+    <label for="">Last Name</label>
+    <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name"><br>
+    <label for="">Email:</label>
+    <input type="text" id="email" name="email" placeholder="Enter Your Email Id:"><br>
+    <label for="">Password:</label>
+    <input type="password" id="password1" name="password1" placeholder="Enter Your Password:"><br>
+    <label for="">Confirm Your Password:</label>
+    <input type="password" id="password2" name="password2" placeholder="Confirm Your Password:"><br>
+    <div class="container" style="background-color:#f1f1f1">
+    <button type="submit">Signup</button>
+</form>
+
+{% endblock %}
